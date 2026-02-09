@@ -1,0 +1,276 @@
+/* ============================================
+   SOLEY Suite — Components
+   Buttons, forms, demo bar, theme toggle
+   ============================================ */
+
+/* --- Buttons --- */
+
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--space-sm);
+    padding: 0.6rem 1.25rem;
+    font-family: var(--font-body);
+    font-size: var(--text-sm);
+    font-weight: 500;
+    border: 1px solid transparent;
+    border-radius: 0;
+    cursor: pointer;
+    transition: all var(--transition);
+    text-decoration: none;
+    line-height: 1;
+    white-space: nowrap;
+}
+
+.btn-primary {
+    background: var(--accent);
+    color: var(--text-on-accent);
+    border-color: var(--accent);
+}
+
+.btn-primary:hover {
+    background: var(--accent-hover);
+    border-color: var(--accent-hover);
+    color: var(--text-on-accent);
+}
+
+.btn-outline {
+    background: transparent;
+    color: var(--accent);
+    border-color: var(--accent-border);
+}
+
+.btn-outline:hover {
+    background: var(--accent-subtle);
+    border-color: var(--accent);
+    color: var(--accent);
+}
+
+.btn-ghost {
+    background: transparent;
+    color: var(--text-secondary);
+    border-color: var(--border);
+}
+
+.btn-ghost:hover {
+    background: var(--accent-subtle);
+    color: var(--text-primary);
+    border-color: var(--border-strong);
+}
+
+.btn-full {
+    width: 100%;
+}
+
+.btn-sm {
+    padding: 0.4rem 0.75rem;
+    font-size: var(--text-xs);
+}
+
+/* --- Demo button (sidebar) --- */
+
+.demo-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--space-sm);
+    padding: 0.75rem var(--space-md);
+    background: var(--demo-bg);
+    color: var(--demo-text);
+    font-family: var(--font-body);
+    font-size: var(--text-sm);
+    font-weight: 600;
+    text-decoration: none;
+    border: none;
+    border-radius: 0;
+    transition: background var(--transition);
+    cursor: pointer;
+    letter-spacing: 0.01em;
+}
+
+.demo-btn:hover {
+    background: var(--demo-bg-hover);
+    color: var(--demo-text);
+}
+
+.demo-btn svg {
+    width: 14px;
+    height: 14px;
+    stroke: currentColor;
+    stroke-width: 2;
+    fill: none;
+    flex-shrink: 0;
+}
+
+/* --- Theme toggle --- */
+
+.theme-toggle {
+    display: flex;
+    align-items: center;
+    gap: var(--space-sm);
+    background: none;
+    border: 1px solid var(--border);
+    padding: var(--space-xs) var(--space-sm);
+    cursor: pointer;
+    font-family: var(--font-body);
+    font-size: var(--text-xs);
+    color: var(--text-tertiary);
+    transition: all var(--transition);
+    border-radius: 0;
+    width: 100%;
+    justify-content: center;
+}
+
+.theme-toggle:hover {
+    color: var(--text-primary);
+    border-color: var(--border-strong);
+}
+
+.theme-toggle svg {
+    width: 14px;
+    height: 14px;
+    stroke: currentColor;
+    stroke-width: 2;
+    fill: none;
+}
+
+/* Sun icon: hidden in light mode */
+.theme-toggle .icon-sun {
+    display: none;
+}
+
+/* Moon icon: hidden in dark mode */
+[data-theme="dark"] .theme-toggle .icon-moon {
+    display: none;
+}
+
+[data-theme="dark"] .theme-toggle .icon-sun {
+    display: block;
+}
+
+/* --- Email signup form --- */
+
+.signup-form {
+    display: flex;
+    gap: 0;
+    max-width: 420px;
+}
+
+.signup-form input[type="email"] {
+    flex: 1;
+    padding: 0.6rem 0.75rem;
+    font-family: var(--font-body);
+    font-size: var(--text-sm);
+    color: var(--text-primary);
+    background: var(--bg-input);
+    border: 1px solid var(--border);
+    border-right: none;
+    border-radius: 0;
+    outline: none;
+    transition: border-color var(--transition);
+    min-width: 0;
+}
+
+.signup-form input[type="email"]::placeholder {
+    color: var(--text-muted);
+}
+
+.signup-form input[type="email"]:focus {
+    border-color: var(--accent);
+}
+
+.signup-form .btn {
+    flex-shrink: 0;
+}
+
+.signup-message {
+    font-size: var(--text-sm);
+    margin-top: var(--space-sm);
+    color: var(--text-tertiary);
+}
+
+.signup-message.success {
+    color: #2D8A56;
+}
+
+[data-theme="dark"] .signup-message.success {
+    color: #5DBB7E;
+}
+
+.signup-message.error {
+    color: #C53030;
+}
+
+[data-theme="dark"] .signup-message.error {
+    color: #FC8181;
+}
+
+/* --- Hero-specific --- */
+
+.hero {
+    margin-bottom: var(--space-4xl);
+    padding-bottom: var(--space-3xl);
+    border-bottom: 1px solid var(--border);
+}
+
+.hero-logo {
+    height: 64px;
+    width: auto;
+    margin-bottom: var(--space-lg);
+}
+
+.hero h1 {
+    margin-bottom: var(--space-sm);
+}
+
+.hero-description {
+    font-size: var(--text-lg);
+    line-height: var(--leading-relaxed);
+    color: var(--text-secondary);
+    max-width: 600px;
+    margin-bottom: var(--space-lg);
+}
+
+.hero-status {
+    font-size: var(--text-sm);
+    color: var(--text-muted);
+    margin-bottom: var(--space-xl);
+}
+
+/* --- Unifying paragraph --- */
+
+.platform-summary {
+    margin-top: var(--space-2xl);
+    padding: var(--space-lg);
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    box-shadow: var(--shadow-card);
+}
+
+.platform-summary p {
+    font-size: var(--text-sm);
+    line-height: var(--leading-relaxed);
+    color: var(--text-secondary);
+    margin: 0;
+}
+
+/* --- Placeholder images --- */
+
+.figure-placeholder {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--bg-code);
+    border: 1px solid var(--border);
+    min-height: 200px;
+    color: var(--text-muted);
+    font-size: var(--text-sm);
+    font-style: italic;
+}
+
+/* --- Link arrow --- */
+
+.link-arrow::after {
+    content: ' \2192';
+}

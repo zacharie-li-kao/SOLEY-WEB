@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SOLEY Suite — Photovoltaic Simulation from First Principles</title>
+    <meta name="description" content="SOLEY Suite: photovoltaic simulation from semiconductor physics to real-world energy production. Outdoor, indoor, and space PV in one platform.">
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="SOLEY Suite — Photovoltaic Simulation">
+    <meta property="og:description" content="Design any solar cell from first principles. Simulate it outdoors, indoors, or in space. One engine, validated physics, four modules.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://soley-pv.com">
+    <meta property="og:image" content="https://soley-pv.com/assets/logo.png">
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="SOLEY Suite — Photovoltaic Simulation">
+    <meta name="twitter:description" content="Design any solar cell from first principles. Simulate it outdoors, indoors, or in space.">
+
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "SoftwareApplication",
+        "name": "SOLEY Suite",
+        "applicationCategory": "Scientific Software",
+        "operatingSystem": "Windows, macOS, Linux, Web",
+        "description": "Photovoltaic simulation platform: device physics, outdoor production, indoor harvesting, and space PV.",
+        "author": {
+            "@type": "Person",
+            "name": "Zacharie Jehl Li-Kao",
+            "affiliation": {
+                "@type": "Organization",
+                "name": "Polytechnic University of Catalonia (UPC)"
+            }
+        },
+        "url": "https://soley-pv.com"
+    }
+    </script>
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="css/variables.css">
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/layout.css">
+    <link rel="stylesheet" href="css/components.css">
+    <link rel="stylesheet" href="css/responsive.css">
+
+    <!-- Theme (load early to prevent flash) -->
+    <script src="js/theme.js"></script>
+</head>
+<body>
+
+<!-- Mobile header -->
+<div class="mobile-header">
+    <a href="#" class="sidebar-logo">
+        <img src="assets/logo.png" alt="SOLEY">
+        <span>SOLEY</span>
+    </a>
+    <button class="menu-toggle" aria-label="Open navigation">
+        <svg viewBox="0 0 24 24"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+    </button>
+</div>
+
+<!-- Sidebar overlay (mobile) -->
+<div class="sidebar-overlay"></div>
+
+<div class="page">
+
+    <!-- Sidebar -->
+    <aside class="sidebar">
+        <div class="sidebar-header">
+            <a href="#" class="sidebar-logo">
+                <img src="assets/logo.png" alt="SOLEY">
+                <span>SOLEY</span>
+            </a>
+        </div>
+
+        <nav class="sidebar-nav">
+            <a href="#hero" class="active">Overview</a>
+            <a href="#platform">Platform</a>
+            <a href="#audience">Who it serves</a>
+            <a href="#press">Publications</a>
+            <a href="#team">Team</a>
+        </nav>
+
+        <div class="sidebar-footer">
+            <a href="https://demo.soley-pv.com" target="_blank" rel="noopener" class="demo-btn">
+                Try a preview of SOLEY
+                <svg viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+            </a>
+            <button class="theme-toggle" aria-label="Toggle theme">
+                <svg class="icon-moon" viewBox="0 0 24 24"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+                <svg class="icon-sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+                <span class="theme-label">Dark mode</span>
+            </button>
+        </div>
+    </aside>
+
+    <!-- Main content -->
+    <main class="content">
+        <div class="content-inner">
+
+            <!-- ======================== HERO ======================== -->
+            <section id="hero" class="hero section">
+                <img src="assets/logo.png" alt="SOLEY Suite" class="hero-logo">
+                <h1>SOLEY Suite</h1>
+                <p class="hero-description">
+                    Photovoltaic simulation from semiconductor physics to real-world energy production.
+                    Design any solar cell from first principles. Simulate it outdoors, indoors, or in space.
+                </p>
+                <p class="hero-status">Coming later in 2026</p>
+
+                <form class="signup-form" autocomplete="off">
+                    <input type="email" name="email" placeholder="Your email address" required>
+                    <button type="submit" class="btn btn-primary">Notify me</button>
+                </form>
+                <p class="signup-message"></p>
+            </section>
+
+            <!-- ======================== PLATFORM ======================== -->
+            <section id="platform" class="section">
+                <p class="section-label">The platform</p>
+                <h2>Four modules, one physics engine</h2>
+                <p>
+                    SOLEY Suite uses an approach different from the drift-diffusion model commonly
+                    found in PV simulation. It combines a full Transfer Matrix Method optical engine
+                    (including light scattering and light trapping models, which is rare for TMM
+                    implementations) with an extended detailed balance electrical model. The result is
+                    a faster computation that yields accuracy comparable to drift-diffusion solvers
+                    for most practical device configurations.
+                </p>
+                <p>
+                    All four modules share this single validated engine. Results are consistent whether
+                    you simulate a rooftop installation or a solar panel on the lunar surface.
+                </p>
+
+                <div class="module-grid">
+
+                    <!-- SOLEY Core -->
+                    <div class="module-item">
+                        <h3 class="module-name">SOLEY Core</h3>
+                        <p class="module-tagline">The physics engine behind every module.</p>
+                        <ul class="module-facts">
+                            <li>Full TMM optics for arbitrary thin-film layer stacks, with partial coherence, angular dependence, and polarisation control</li>
+                            <li>Debye-Waller scattering and geometric light trapping on top of TMM, a rare combination that handles both smooth and textured interfaces</li>
+                            <li>Extended detailed balance electrical model: SRH, Auger, photon recycling, series and shunt resistance, Hecht collection</li>
+                            <li>J-V curves, EQE, photoluminescence, electroluminescence, defect analysis, batch parameter sweeps</li>
+                            <li>Built-in theoretical hints: long-form explanations of the equations and methods behind every calculation</li>
+                        </ul>
+                        <div class="figure">
+                            <img src="assets/screenshots/core-jv-curves.png"
+                                 alt="SOLEY Core: J-V curve generation with layer stack"
+                                 onerror="this.parentElement.innerHTML='<div class=figure-placeholder>Screenshot: core-jv-curves.png</div>'">
+                        </div>
+                        <p class="figure-caption">Fig. 1 -- SOLEY Core. J-V characteristics computed from a user-defined thin-film stack.</p>
+                    </div>
+
+                    <!-- I-SOLEY -->
+                    <div class="module-item">
+                        <h3 class="module-name">I-SOLEY</h3>
+                        <p class="module-tagline">Outdoor energy production, hour by hour.</p>
+                        <ul class="module-facts">
+                            <li>Full-year hourly simulation using real meteorological data (ERA5, SARAH-2/3, NSRDB)</li>
+                            <li>TMM-based angle-resolved optics at every timestep, not simplified absorption coefficients</li>
+                            <li>Perez sky diffuse irradiance model for accurate decomposition of direct and diffuse components</li>
+                            <li>Martinez-Moreno self-shading model with row-to-row shading, bypass diode logic, and interactive shading diagrams</li>
+                            <li>Four tracking modes, three cell temperature models, soiling, ageing, bifacial</li>
+                            <li>Financial analysis: NPV, IRR, LCOE, Monte Carlo risk assessment</li>
+                        </ul>
+                        <div class="figure">
+                            <img src="assets/screenshots/isoley-production.png"
+                                 alt="I-SOLEY: annual energy production results"
+                                 onerror="this.parentElement.innerHTML='<div class=figure-placeholder>Screenshot: isoley-production.png</div>'">
+                        </div>
+                        <p class="figure-caption">Fig. 2 -- I-SOLEY. Annual energy production from a full-year hourly simulation.</p>
+                    </div>
+
+                    <!-- IN-SOLEY -->
+                    <div class="module-item">
+                        <h3 class="module-name">IN-SOLEY</h3>
+                        <p class="module-tagline">Indoor photovoltaics. No existing tool does this.</p>
+                        <ul class="module-facts">
+                            <li>Full radiosity solver for artificial lighting environments</li>
+                            <li>Anisotropic fixture emission, extended source model, window daylight</li>
+                            <li>Coupled TMM optics: the same device physics as outdoor simulation</li>
+                            <li>Batch optimisation of cell placement, angle, and height</li>
+                        </ul>
+                        <div class="figure">
+                            <img src="assets/screenshots/insoley-heatmap.png"
+                                 alt="IN-SOLEY: indoor illumination and energy harvesting"
+                                 onerror="this.parentElement.innerHTML='<div class=figure-placeholder>Screenshot: insoley-heatmap.png</div>'">
+                        </div>
+                        <p class="figure-caption">Fig. 3 -- IN-SOLEY. Indoor light distribution and photovoltaic energy harvesting simulation.</p>
+                    </div>
+
+                    <!-- SOLEY-S -->
+                    <div class="module-item">
+                        <h3 class="module-name">SOLEY-S</h3>
+                        <p class="module-tagline">Solar panels on the Moon. We simulate that.</p>
+                        <ul class="module-facts">
+                            <li>Transient electro-thermal simulation using JPL DE440s ephemeris</li>
+                            <li>Original <a href="https://arxiv.org/pdf/2509.13110" target="_blank" rel="noopener">Koltsov &amp; Jehl Li-Kao thermal balance model</a>: 6 absorption terms, radiative cooling, regolith coupling</li>
+                            <li>Five degradation mechanisms, adaptive timestepping</li>
+                            <li>Presets for lunar surface, LEO, Mars, deep space</li>
+                        </ul>
+                        <div class="figure">
+                            <img src="assets/screenshots/spacepv-thermal.png"
+                                 alt="SOLEY-S: transient thermal simulation on the lunar surface"
+                                 onerror="this.parentElement.innerHTML='<div class=figure-placeholder>Screenshot: spacepv-thermal.png</div>'">
+                        </div>
+                        <p class="figure-caption">Fig. 4 -- SOLEY-S. Cell temperature and power output during a lunar day-night cycle.</p>
+                    </div>
+
+                </div>
+
+                <!-- Unifying statement -->
+                <div class="platform-summary">
+                    <p>
+                        Every module shares the same validated physics engine. A device designed in SOLEY Core
+                        can be tested on a rooftop in Barcelona, under an office ceiling lamp, or on the lunar
+                        surface. Same optics, same device physics, consistent results across environments.
+                    </p>
+                    <p style="margin-top: var(--space-md);">
+                        All utility-scale modules (I-SOLEY, IN-SOLEY, SOLEY-S) produce detailed executive
+                        reports and give full access to the raw output data for further analysis.
+                    </p>
+                </div>
+
+                <!-- Metrics -->
+                <div class="metrics">
+                    <div class="metric">
+                        <span class="metric-value">&infin;</span>
+                        <span class="metric-label">Technology versatility</span>
+                    </div>
+                    <div class="metric">
+                        <span class="metric-value">&lt;30 s</span>
+                        <span class="metric-label">Full-year simulation</span>
+                    </div>
+                    <div class="metric">
+                        <span class="metric-value">4</span>
+                        <span class="metric-label">Modules</span>
+                    </div>
+                    <div class="metric">
+                        <span class="metric-value">2025</span>
+                        <span class="metric-label">Published in Solar RRL</span>
+                    </div>
+                </div>
+            </section>
+
+            <!-- ======================== AUDIENCE ======================== -->
+            <section id="audience" class="section">
+                <p class="section-label">Who it serves</p>
+                <h2>Built for people who work with photovoltaics</h2>
+
+                <div class="audience-block">
+                    <h4>Educators</h4>
+                    <p>
+                        SOLEY is the only platform that takes students from semiconductor physics all the
+                        way to utility-scale production simulation in a single environment. Built-in
+                        theoretical hints explain every equation and method used in the calculations.
+                        One tool covers device optics, electrical modelling, outdoor production, indoor
+                        harvesting, and space PV.
+                    </p>
+                </div>
+
+                <div class="audience-block">
+                    <h4>Students</h4>
+                    <p>
+                        For a bachelor thesis, a master project, or self-study, SOLEY provides a complete
+                        PV simulation environment with no steep learning curve. The academic version of
+                        SOLEY Core is
+                        <a href="https://zacharie-li-kao.github.io/SOLEY-PV/">free and always will be</a>.
+                    </p>
+                </div>
+
+                <div class="audience-block">
+                    <h4>Researchers</h4>
+                    <p>
+                        A unified framework for simulating almost any thin-film photovoltaic technology:
+                        perovskite, CIGS, CdTe, GaAs, silicon, tandems, multi-junction devices.
+                        Fundamental researchers can test lab-scale digital twins in real-world conditions.
+                        Those working further downstream, for example on LCA analysis, get reliable
+                        models grounded in device physics rather than empirical approximations.
+                    </p>
+                </div>
+
+                <div class="audience-block">
+                    <h4>Industry</h4>
+                    <p>
+                        SOLEY helps with the development of emerging technologies for which empirical data
+                        is scarce, and with emerging PV applications: building-integrated PV, agrivoltaics,
+                        indoor PV for IoT. It does not try to replace established empirical models, but it
+                        offers physics-based estimation of PV production where no empirical model exists yet.
+                        Indoor PV and space PV modelling are virtually uncharted. SOLEY is the first
+                        tool to cover them.
+                    </p>
+                </div>
+            </section>
+
+            <!-- ======================== PRESS & PUBLICATIONS ======================== -->
+            <section id="press" class="section">
+                <p class="section-label">Publications &amp; press</p>
+                <h2>References</h2>
+
+                <ul class="press-list">
+                    <li>
+                        <span class="press-source">Solar RRL (2025)</span>
+                        <span class="press-title">
+                            <a href="https://doi.org/10.1002/solr.202500345" target="_blank" rel="noopener">
+                                SOLEY: a package for optical and extended detailed balance model for
+                                photovoltaic device simulation
+                            </a>
+                        </span>
+                    </li>
+                    <li>
+                        <span class="press-source">PV Magazine (2025)</span>
+                        <span class="press-title">
+                            <a href="https://www.pv-magazine.com/2025/09/24/open-access-simulation-software-for-solar-cell-modeling/" target="_blank" rel="noopener">
+                                Open-access simulation software for solar cell modelling
+                            </a>
+                        </span>
+                    </li>
+                    <li>
+                        <span class="press-source">UPC BarcelonaTech</span>
+                        <span class="press-title">
+                            <a href="https://eebe.upc.edu/ca/noticies/nou-programari-dacces-obert-per-entendre-i-dissenyar-cel-lules-solars" target="_blank" rel="noopener">
+                                Nou programari d'acc&eacute;s obert per entendre i dissenyar c&egrave;l&middot;lules solars
+                            </a>
+                        </span>
+                    </li>
+                </ul>
+
+                <div class="callout">
+                    <p>
+                        <strong>SOLEY Core</strong>, the device physics engine, is free for academic use and
+                        always will be. Download it from the
+                        <a href="https://zacharie-li-kao.github.io/SOLEY-PV/" class="link-arrow">academic page</a>
+                    </p>
+                </div>
+            </section>
+
+            <!-- ======================== TEAM ======================== -->
+            <section id="team" class="section">
+                <p class="section-label">Team</p>
+                <h2>People behind SOLEY</h2>
+
+                <div class="team-grid">
+
+                    <div class="team-member">
+                        <img src="assets/team/zacharie.jpg" alt="Zacharie Jehl Li-Kao" class="team-photo"
+                             onerror="this.style.display='none'">
+                        <div class="team-info">
+                            <h4>Zacharie Jehl Li-Kao, PhD</h4>
+                            <p class="team-role">Creator of SOLEY | Professor at UPC BarcelonaTech</p>
+                            <p>
+                                Applied physicist with 15 years of experience in photovoltaic device
+                                fabrication, characterisation, and modelling across institutions in France,
+                                Japan, South Africa, and Spain. 74 peer-reviewed publications
+                                (h-index 26, >2600 citations). Ramon y Cajal fellow. Coordinator
+                                of the EU project SOLIS.
+                            </p>
+                            <div class="team-links">
+                                <a href="https://scholar.google.co.jp/citations?user=wpg7SB8AAAAJ&hl=en" target="_blank" rel="noopener">Google Scholar</a>
+                                <a href="https://www.linkedin.com/in/zacharie-j-9ba014ba/" target="_blank" rel="noopener">LinkedIn</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="team-member">
+                        <div class="team-info">
+                            <h4>Sergio Giraldo</h4>
+                            <p class="team-role">More about our team coming soon.</p>
+                        </div>
+                    </div>
+
+                </div>
+            </section>
+
+        </div>
+
+        <!-- Footer -->
+        <footer class="site-footer">
+            <div class="footer-inner">
+                <div class="footer-col">
+                    <h5>SOLEY Suite</h5>
+                    <p>Photovoltaic simulation from first principles.</p>
+                    <p>Built in Barcelona.</p>
+                </div>
+                <div class="footer-col">
+                    <h5>Links</h5>
+                    <a href="https://demo.soley-pv.com" target="_blank" rel="noopener">Demo</a>
+                    <a href="https://zacharie-li-kao.github.io/SOLEY-PV/">SOLEY Core (free)</a>
+                    <a href="https://doi.org/10.1002/solr.202500345" target="_blank" rel="noopener">Solar RRL paper</a>
+                </div>
+                <div class="footer-col">
+                    <h5>Contact</h5>
+                    <a href="mailto:zacharie.jehl@upc.edu">zacharie.jehl@upc.edu</a>
+                    <a href="https://www.linkedin.com/in/zacharie-j-9ba014ba/" target="_blank" rel="noopener">LinkedIn</a>
+                </div>
+            </div>
+            <p class="footer-copyright">&copy; 2025-2026 Zacharie Jehl Li-Kao</p>
+        </footer>
+    </main>
+
+</div>
+
+<!-- Mobile demo bar -->
+<div class="mobile-demo-bar">
+    <a href="https://demo.soley-pv.com" target="_blank" rel="noopener" class="demo-btn btn-full">
+        Try a preview of SOLEY
+        <svg viewBox="0 0 24 24" style="width:14px;height:14px;stroke:currentColor;stroke-width:2;fill:none"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+    </a>
+</div>
+
+<!-- Scripts -->
+<script src="js/nav.js"></script>
+<script src="js/signup.js"></script>
+
+</body>
+</html>

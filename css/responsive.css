@@ -1,0 +1,98 @@
+/* ============================================
+   SOLEY Suite — Responsive
+   Mobile and tablet breakpoints
+   ============================================ */
+
+/* --- Tablet: sidebar collapses but content reflows --- */
+@media (max-width: 1024px) {
+    .sidebar {
+        transform: translateX(-100%);
+        transition: transform 200ms ease;
+        z-index: 300;
+    }
+
+    .sidebar.open {
+        transform: translateX(0);
+    }
+
+    .mobile-header {
+        display: flex;
+    }
+
+    .mobile-demo-bar {
+        display: block;
+    }
+
+    .content {
+        margin-left: 0;
+        padding-top: 56px;
+        padding-bottom: 60px;
+    }
+
+    .content-inner {
+        padding: var(--space-2xl) var(--space-lg);
+    }
+
+    .site-footer {
+        margin-left: 0;
+    }
+
+    .metrics {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* --- Phone --- */
+@media (max-width: 640px) {
+    .content-inner {
+        padding: var(--space-xl) var(--space-md);
+    }
+
+    h1 {
+        font-size: var(--text-3xl);
+    }
+
+    h2 {
+        font-size: var(--text-2xl);
+    }
+
+    .hero-logo {
+        height: 48px;
+    }
+
+    .hero-description {
+        font-size: var(--text-base);
+    }
+
+    .signup-form {
+        flex-direction: column;
+        max-width: 100%;
+    }
+
+    .signup-form input[type="email"] {
+        border-right: 1px solid var(--border);
+        border-bottom: none;
+    }
+
+    .signup-form .btn {
+        width: 100%;
+    }
+
+    .metrics {
+        grid-template-columns: 1fr 1fr;
+        gap: var(--space-lg);
+    }
+
+    .team-member {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .footer-inner {
+        flex-direction: column;
+    }
+
+    .site-footer {
+        padding: var(--space-xl) var(--space-md);
+    }
+}
